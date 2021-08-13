@@ -1,0 +1,73 @@
+.tilesGrid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px);
+}
+
+.tilesGrid > button {
+    cursor: pointer;
+    height: 5.3rem;
+    width: 5.5rem;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-shadow: black 1px 1px;
+    border: solid 2px #F24E5D;
+    border-radius: 10% ;
+    background: linear-gradient(360deg, rgba(247, 101, 4, 0.986) 5%, rgba(255,201,0,1) 100%);
+    margin: 10px 0 10px 0
+}
+
+.tilesGrid > button:hover,
+.tilesGrid > button:focus
+{
+    background: linear-gradient(360deg, rgba(143, 22, 1, 0.986) 5%, rgb(221, 36, 4) 100%);
+    border: #b9f24e;
+    opacity: 1;
+    transition: 0.5s ease-in;
+}
+
+@media only screen and (max-width: 640px) {
+    .tilesGrid > button {
+        font-size: 3.5rem;
+    }
+    .tilesGrid > button:hover
+     {
+        background: linear-gradient(360deg, rgba(2, 102, 2, 0.986) 2%, rgb(42, 224, 6) 80%);
+    }
+    .tilesGrid > button:focus {
+        background: linear-gradient(360deg, rgba(2, 102, 2, 0.986) 2%, rgb(42, 224, 6) 80%);
+    }
+  }
+
+.clearButtonContainer {
+    display: flex;
+    justify-content: flex-end;
+    transform: translate(-20.5rem, 21rem);
+}
+
+@media only screen and (max-width: 640px) {
+    .clearButtonContainer {
+        padding-top: 2rem;
+        margin-right: -13rem;
+    }
+  }
+
+.clearWord {
+    color: lightgray;
+}
+
+.clearBtn, 
+.clearBtn:hover
+{
+    background-color: lightgray;
+    border-radius: 50%;
+    padding: 0.5rem;
+    color: #ffff;
+    border: none;
+    cursor: pointer;
+}
+
