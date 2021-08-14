@@ -7,7 +7,7 @@
     grid-template-rows: minmax(120px);
 }
 
-.tilesGrid > button {
+.btnStyles {
     cursor: pointer;
     height: 5.3rem;
     width: 5.5rem;
@@ -21,8 +21,20 @@
     margin: 10px 0 10px 0
 }
 
-.tilesGrid > button:hover,
-.tilesGrid > button:focus
+.btnSelected {
+    height: 5.3rem;
+    width: 5.5rem;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-shadow: black 1px 1px;
+    border: solid 2px;
+    border-radius: 10% ;
+    background: linear-gradient(360deg, rgba(143, 22, 1, 0.986) 5%, rgb(221, 36, 4) 100%);
+    margin: 10px 0 10px 0
+}
+
+.btnStyles:hover
 {
     background: linear-gradient(360deg, rgba(143, 22, 1, 0.986) 5%, rgb(221, 36, 4) 100%);
     border: #b9f24e;
@@ -31,22 +43,30 @@
 }
 
 @media only screen and (max-width: 640px) {
-    .tilesGrid > button {
+    .tilesGrid .btnStyles {
         font-size: 3.5rem;
     }
-    .tilesGrid > button:hover
+    .tilesGrid .btnStyles:hover
      {
         background: linear-gradient(360deg, rgba(2, 102, 2, 0.986) 2%, rgb(42, 224, 6) 80%);
     }
-    .tilesGrid > button:focus {
+    .btnSelected {
+        height: 5.3rem;
+        width: 5.5rem;
+        font-size: 3.5rem;
+        font-weight: bold;
+        color: #FFFFFF;
+        text-shadow: black 1px 1px;
+        border-radius: 10% ;
         background: linear-gradient(360deg, rgba(2, 102, 2, 0.986) 2%, rgb(42, 224, 6) 80%);
+        margin: 10px 0 10px 0
     }
   }
 
 .clearButtonContainer {
     display: flex;
     justify-content: flex-end;
-    transform: translate(-20.5rem, 21rem);
+    transform: translate(-20.5rem, 22rem);
 }
 
 @media only screen and (max-width: 640px) {
@@ -64,10 +84,13 @@
 .clearBtn:hover
 {
     background-color: lightgray;
-    border-radius: 50%;
+    border-radius: 60%;
     padding: 0.5rem;
     color: #ffff;
     border: none;
     cursor: pointer;
+    float: right;
+    margin-right: -2rem;
+    margin-top: -1.5rem;
 }
 
