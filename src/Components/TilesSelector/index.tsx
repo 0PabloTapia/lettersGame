@@ -4,46 +4,50 @@ import styles from './styles.module.css'
 import { boardData } from './utils'
 
 export const TilesSelector:FC = (): JSX.Element => {
-    const [result, setResult] = useState<string>("")
+       const [currentTile, setCurrentTile] = useState("")
+       const [selectedTile, setSelectedTile] = useState([])
+  
 
-    const handleClick = (e: any) => {
-
-        setResult(result.concat(e.target.name))
+    const handleClick = (letter: string) => {
+        setCurrentTile(currentTile + letter)
     }
 
-    const handleClear = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-        setResult("")
+    const handleBtnStyle = (letterId: never) => {
+        let tmp = selectedTile
+        if(selectedTile.includes(letterId)) {
+            setSelectedTile(selectedTile.filter(elem => elem !== letterId))
+        } else {
+            tmp.push(letterId)
+            setSelectedTile(tmp)
+        }
+    }
+
+    const handleClear = () => {
+        setCurrentTile("")
+        setSelectedTile([])
     }
 
     return(
         <> 
-        <div className={styles.clearButtonContainer}>
-            <div onClick={handleClear}>
-                {result ? <div className={styles.clearWord}>Clear Word <button className={styles.clearBtn}>X</button></div> : ''}
-            </div>
+        <div onClick={handleClear} 
+             className={styles.clearButtonContainer}>
+            {currentTile ? <div><div className={styles.clearWord}>Clear Word</div><button className={styles.clearBtn}>X</button></div> : ''}
         </div>
-            <div>{boardData.map((letter, idx) => 
-                (<div key={idx} className={styles.tilesGrid}>
-                    <button name="A" onClick={handleClick}>{letter.alphabet[0]}</button>
-                    <button name="B" onClick={handleClick}>{letter.alphabet[1]}</button>
-                    <button name="C" onClick={handleClick}>{letter.alphabet[2]}</button>
-                    <button name="D" onClick={handleClick}>{letter.alphabet[3]}</button>
-                    <button name="E" onClick={handleClick}>{letter.alphabet[4]}</button>
-                    <button name="F" onClick={handleClick}>{letter.alphabet[5]}</button>
-                    <button name="G" onClick={handleClick}>{letter.alphabet[6]}</button>
-                    <button name="H" onClick={handleClick}>{letter.alphabet[7]}</button>
-                    <button name="I" onClick={handleClick}>{letter.alphabet[8]}</button>
-                    <button name="J" onClick={handleClick}>{letter.alphabet[9]}</button>
-                    <button name="K" onClick={handleClick}>{letter.alphabet[10]}</button>
-                    <button name="L" onClick={handleClick}>{letter.alphabet[11]}</button>
-                    <button name="M" onClick={handleClick}>{letter.alphabet[12]}</button>
-                    <button name="N" onClick={handleClick}>{letter.alphabet[13]}</button>
-                    <button name="O" onClick={handleClick}>{letter.alphabet[14]}</button>
-                    <button name="P" onClick={handleClick}>{letter.alphabet[15]}</button>
-                </div>
-                ))}
+            <div className={styles.tilesGrid}>
+                {boardData.map(letter => {
+                    return <button 
+                              key={letter.id} 
+                              onClick={() =>  
+                               {handleClick(letter.thisLetter); 
+                                handleBtnStyle(letter.id as never)}} 
+                              className={selectedTile.includes(letter.id as never) ?  
+                              styles.btnSelected : 
+                              styles.btnStyles}> 
+                            {letter.thisLetter}
+                           </button>
+                })}
             </div>
-            <TextBox result={result}/>
+            <TextBox currentTile={currentTile} />
         </>
     )
 }
