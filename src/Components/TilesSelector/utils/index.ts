@@ -1,22 +1,22 @@
 export const boardData = [
   {
-    thisLetter: 'A',
+    thisLetter: 'L',
     id: 1
   },
   {
-    thisLetter: 'B',
+    thisLetter: 'I',
     id: 2
   },
   {
-    thisLetter: 'C',
+    thisLetter: 'S',
     id: 3
   },
   {
-    thisLetter: 'D',
+    thisLetter: 'T',
     id: 4
   },
   {
-    thisLetter: 'E',
+    thisLetter: 'O',
     id: 5
   },
   {
@@ -24,43 +24,83 @@ export const boardData = [
     id: 6
   },
   {
-    thisLetter: 'G',
+    thisLetter: 'A',
     id: 7
   },
   {
-    thisLetter: 'H',
+    thisLetter: 'T',
     id: 8
   },
   {
-    thisLetter: 'I',
+    thisLetter: 'S',
     id: 9
   },
   {
-    thisLetter: 'J',
+    thisLetter: 'T',
     id: 10
   },
   {
-    thisLetter: 'K',
+    thisLetter: 'R',
     id: 11
   },
   {
-    thisLetter: 'L',
+    thisLetter: 'S',
     id: 12
   },
   {
-    thisLetter: 'M',
+    thisLetter: 'O',
     id: 13
   },
   {
-    thisLetter: 'N',
+    thisLetter: 'R',
     id: 14
   },
   {
-    thisLetter: 'O',
+    thisLetter: 'A',
     id: 15
   },
   {
-    thisLetter: 'P',
+    thisLetter: 'Y',
     id: 16
   },
+]
+
+export const dictionary = [
+  "array",
+  "arrays",
+  "art",
+  "arts",
+  "fast",
+  "fat",
+  "fist",
+  "lift",
+  "lifts",
+  "lire",
+  "list",
+  "load",
+  "loaf",
+  "loft",
+  "lost",
+  "lure",
+  "lust",
+  "rant",
+  "rat",
+  "rats",
+  "rent",
+  "rest",
+  "rust",
+  "sat",
+  "soft",
+  "sort",
+  "soy",
+  "start",
+  "starts",
+  "street",
+  "tar",
+  "tart",
+  "tarts",
+  "toy",
+  "toys",
+  "tray",
+  "trays"
 ]

@@ -22,6 +22,7 @@ export const TilesSelector:FC = (): JSX.Element => {
         }
     }
 
+
     const handleClear = () => {
         setCurrentTile("")
         setSelectedTile([])
